@@ -1,9 +1,9 @@
-import Counter from "@/app/components/Counter";
+import Greet from "@/app/components/Greet";
 
 export default function Home() {
     return (
         <main>
-            <Counter/>
+            <Greet/>
         </main>
     );
 }

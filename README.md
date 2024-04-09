@@ -1,12 +1,5 @@
+## Filename Conventions
 
-## Next Jest/RTL installation instructions
-
-```bash
-npm install -D jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom
-npm init jest@latest
-npm i ts-node
-npm i --save-dev @types/jest
-npm run test
-```
-
-## [Next.js Documentation](https://nextjs.org/docs/app/building-your-application/testing/jest)
+* Files with .test.js , .test.jsx , .test.ts or .test.tsx suffix.
+* Files with .spec.js , .spec.jsx , .spec.ts or .spec.tsx suffix.
+* Files with .js , .jsx , .ts or .tsx suffix in \_\_tests__ folders.
