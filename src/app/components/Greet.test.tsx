@@ -6,5 +6,8 @@ describe('Greet Component', () => {
         render(<Greet/>)
         const headingElement = screen.getByText('Hello, World!')
         expect(headingElement).toBeInTheDocument();
+        expect(headingElement).toHaveClass(/text-red/);
+        expect(headingElement).toHaveTextContent('Hello, World!');
+        expect(headingElement).not.toHaveTextContent('Bye');
     });
 })

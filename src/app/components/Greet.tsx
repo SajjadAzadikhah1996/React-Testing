@@ -1,9 +1,5 @@
-type GreetPropsType = {
-    name?: string
-}
-
-export default function Greet({name}: GreetPropsType) {
+export default function Greet() {
     return (
-        <h1>Hello, {name ? name : 'World'}!</h1>
+        <h1 className='text-red-600'>Hello, World!</h1>
     )
 }
