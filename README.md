@@ -1,12 +1,15 @@
-## Test Driven Development (TDD)
+## Code Coverage
 
-Test driven development is a software development process where **you write
-tests before writing the software code.** Once the test have been written, you
-the write the code to sure the tests pass.
+A metric that can help you understand how much of your software code is tested .
+It indicates that test coverage information should be collected and reported in the output.
 
-1. Create tests that verify the functionality of a specific feature.
-2. Write software code that will run the tests successfully when re-executed.
-3. Refactor the code for optimization while ensuring the tests continue pass.
+* Statement coverage: how many of the statements in the software code have been executed.
+* Branches coverage: how many of the branches of the control structures (if statements for instance)
+* Function coverage: how many of the functions defined have been called and finally.
+* Line coverage: how many of lines of source code have been tested.
 
-TDD also called red-green testing as all tests go from a red failed state to 
-a green passed state.
+run `npx jest --coverage` or `jest --coverage` to see result of coverage.
+
+When you run the command you will found an index.html file in the coverage folder, that
+could be loaded into a browser. It included the information printed at the command line,
+plus additional information and some graphical output.
