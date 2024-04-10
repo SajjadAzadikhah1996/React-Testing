@@ -1,9 +1,9 @@
-import Greet from "@/app/components/Greet";
+import App from "@/app/components/App";
 
 export default function Home() {
     return (
         <main>
-            <Greet/>
+            <App/>
         </main>
     );
 }
