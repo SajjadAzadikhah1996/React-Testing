@@ -1,8 +1,15 @@
 'use client';
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 export default function App() {
     const [isSignedIn, setIsSignedIn] = useState(false);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setIsSignedIn(true)
+        }, 1001)
+    }, []);
+
     return (
         <div>
             {

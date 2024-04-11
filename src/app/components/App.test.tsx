@@ -2,11 +2,9 @@ import {render, screen} from "@testing-library/react";
 import App from "@/app/components/App";
 
 describe('Login Component', () => {
-    it('Renders', () => {
+    it('Renders based on authenticated user.', async () => {
         render(<App/>)
-        const signInButtonElement = screen.getByRole('button', {name: 'SignIn'});
-        const signOutButtonElement = screen.queryByRole('button', {name: 'SignOut'});
-        expect(signInButtonElement).toBeInTheDocument();
-        expect(signOutButtonElement).not.toBeInTheDocument();
+        const signOutButtonElement = await screen.findByRole('button', {name: 'SignOut'}, {timeout: 2000}); //default is 1000ms
+        expect(signOutButtonElement).toBeInTheDocument();
     });
 })
