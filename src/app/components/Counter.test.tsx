@@ -1,4 +1,5 @@
-import {fireEvent, render, screen} from "@testing-library/react";
+import {render, screen} from "@testing-library/react";
+import userEvent from '@testing-library/user-event'
 import Counter from "@/app/components/Counter";
 
 describe('Counter Component', function () {
@@ -11,10 +12,12 @@ describe('Counter Component', function () {
             expect(inputElement).not.toHaveClass(/(hidden|invisible)/i)
         })
 
-        it('changeable.', function () {
+        it('changeable.', async function () {
+            userEvent.setup();
             render(<Counter/>);
             const inputElement = screen.getByLabelText(/custom payload/i) as HTMLInputElement;
-            fireEvent.change(inputElement, {target: {value: 2}})
+            await userEvent.clear(inputElement);
+            await userEvent.type(inputElement, '2');
             expect(inputElement.valueAsNumber).toBe(2);
         })
     })
@@ -40,10 +43,11 @@ describe('Counter Component', function () {
         })
 
         it('reset button resets counter to zero.', function () {
+            userEvent.setup();
             render(<Counter/>);
             const counterElement = screen.getByText(/0/i) as HTMLSpanElement;
             const resetButton = screen.getByRole('button', {name: /reset/i}) as HTMLButtonElement;
-            fireEvent.click(resetButton);
+            userEvent.click(resetButton);
             expect(counterElement.textContent).toBe('0');
         })
     })

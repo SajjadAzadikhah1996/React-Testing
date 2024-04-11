@@ -39,6 +39,7 @@ export default function Counter() {
                             type='number'
                             className='w-64 py-1 border-2 border-b-blue-50 rounded-lg outline-none text-center my-2'
                             defaultValue={1}
+                            // disabled={true}
                             onChange={payloadChangeHandle}
                         />
                     </div>
