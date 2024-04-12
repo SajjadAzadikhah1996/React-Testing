@@ -1,9 +1,8 @@
-import {render, screen} from "@testing-library/react";
 import Header from "@/app/components/Header";
-import AppServiceProvider from "@/app/providers/AppServiceProvider";
+import {render, screen} from "@/app/test-utils";
 
 it('Header component renders theme mode correctly.', () => {
-    render(<Header/>, {wrapper: AppServiceProvider});
+    render(<Header/>);
     const headingElement = screen.getByRole('heading');
     expect(headingElement).toHaveTextContent('dark mode');
 });
