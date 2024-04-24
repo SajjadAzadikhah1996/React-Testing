@@ -1,5 +1,5 @@
-type CounterPropsType = {
-    count: number,
-    increase?: () => void,
-    decrease?: () => void
+type UserType = {
+        name: string
 }
+
+type UsersType = UserType[]
