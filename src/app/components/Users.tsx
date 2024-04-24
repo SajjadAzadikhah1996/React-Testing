@@ -5,13 +5,15 @@ export default async function Users() {
     return (
         <div>
             <h1 className = "text-2xl">Users</h1>
-            <ul>
-                {
-                    users.map(user => (
-                        <li key = {user.name}>{user.name}</li>
-                    ))
-                }
-            </ul>
+            {
+                res.status !== 200 ? <span data-testid = "status-text">{res.statusText}</span> : <ul>
+                    {
+                        users.map(user => (
+                            <li key = {user.name}>{user.name}</li>
+                        ))
+                    }
+                </ul>
+            }
         </div>
     );
 }

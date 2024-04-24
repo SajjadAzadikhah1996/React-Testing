@@ -7,3 +7,12 @@ export const handlers = [
         });
     })
 ];
+
+export const errorHandlers = [
+    http.get('https://jsonplaceholder.typicode.com/users', () => {
+        return HttpResponse.json(null, {
+            status: 401,
+            statusText: 'Unauthenticated'
+        });
+    })
+];
